@@ -43,9 +43,9 @@
 ### Using a block
 Normal HTTP semantics, but the request body is a JSON object of input data, and the response body is a JSON object of output data.
 
->>> POST /block-endpoint
->>> …headers…
->>> {"foo": "Value for foo input", "bar": "Value for bar input"}
+	>>> POST /block-endpoint
+	>>> …headers…
+	>>> {"foo": "Value for foo input", "bar": "Value for bar input"}
 
 	<<< 200 OK
 	<<< …headers…
