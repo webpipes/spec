@@ -1,22 +1,26 @@
-# WebPipes
+# WebPipes Spec
+Version: 0.1 draft
+
+## Overview
+WebPipes is an open framework for turning the web into an end-user programming environment. It provides set of standards letting the developer ecosystem create primitives called blocks that can be wired together to create executable pipelines. Pipelines can be as simple IFTTT recipes, or as complex as Yahoo Pipes, but they can also be blocks themselves. 
+
+> I'm not presumptuous enough to say this is finally "pipes for the web", but I certainly think "web pipes" is the most appropriate name for what this is. *--Jeff Lindsay*
 
 ## Terms
-
-* _block_: a web service endpoint that implements the block API
-* _block definition_: machine readable description of a block and its inputs and outputs
-* _inputs_: named values for requests to a block
-* _outputs_: named values for a block response
-* _trigger_: a type of block with no inputs and implements the trigger registration API as well as the block API
-* _action_: a type of block with no outputs that performs some "action"
-* _pipeline_: an executable pipeline made from a pipeline definition and a pipeline executor
-* _pipeline executor_: a web service that exposes a block API endpoint that executes a pipeline definition 
-* _pipeline definition_: a block definition that also describes what blocks make it up and the pipes between them
-* _pipe_: the connection of a block output to a block input
-* _pipeline editor_: UI for composing a pipeline definition, e.x. Yahoo Pipes, IFTTT, etc
-* _composite block_: a pipeline that is also a block
-* _composite trigger_: a pipeline that is also a trigger
-* _composite action_: a pipeline that is also an action
-
+* __block__: a web service endpoint that implements the block API
+* __block definition__: machine readable description of a block and its inputs and outputs
+* __inputs__: named values used in requests to a block
+* __outputs__: named values used in a block response
+* __trigger__: a type of block with no inputs and implements the trigger registration API as well as the block API
+* __action__: a type of block with no outputs that performs some "action"
+* __pipeline__: an executable series of blocks made from a pipeline definition and a pipeline executor
+* __pipeline executor__: a web service that exposes a block API endpoint that executes a pipeline definition 
+* __pipeline definition__: a block definition that also describes what blocks make it up and the pipes between them
+* __pipe__: the connection of a block output to a block input
+* __pipeline editor__: UI for composing a pipeline definition, e.x. Yahoo Pipes, IFTTT, etc
+* __composite block__: a pipeline that is also a block
+* __composite trigger__: a pipeline that is also a trigger
+* __composite action__: a pipeline that is also an action
 
 ## Block Definition Format
 
@@ -39,7 +43,6 @@
     
 
 ## Block API
-
 ### Input and Output
 Block endpoints work with JSON objects containing input or output "records". An input or output record is a JSON object with keys corresponding to the defined inputs or outputs of the block. Given a block with two inputs "foo" and "bar", here is an example input record:
 	
@@ -83,7 +86,7 @@ The block definition is exposed in the body of response to an OPTIONS request on
 
 (Note http://zacstewart.com/2012/04/14/http-options-method.html)
 
-### Trigger Registration API
+## Trigger Registration API
 The trigger registration API is used for registering an HTTP callback that triggers the entry action of a pipeline. It's based on the tentative HTTP Subscriptions standard (loosely based on PubSubHubbub). It's only available on blocks that are triggers.
 
 	>>> GET /block-endpoint
@@ -122,10 +125,9 @@ The trigger registration API is used for registering an HTTP callback that trigg
 
 ## Things to Prototype
 
-- example triggers/blocks/actions
+- triggers/blocks/actions
 - pipeline executor 
 - pipeline editor
-- block client library, server framework/helper libs
 
 ## Authors
 * Matthew Hudson
