@@ -54,8 +54,8 @@ Normal HTTP semantics, but the request body is a JSON object of input data, and 
 ### Getting a block definition
 The block definition is exposed in the body of response to an OPTIONS request.
 
->>> OPTIONS /block-endpoint
->>> …headers…
+	>>> OPTIONS /block-endpoint
+	>>> …headers…
 
 	<<< 200 OK
 	<<< …headers…
@@ -66,10 +66,10 @@ The block definition is exposed in the body of response to an OPTIONS request.
 ## Trigger Registration API
 The trigger registration API is used for registering an HTTP callback that triggers the entry point action of a pipeline. It's based on the tentative HTTP Subscriptions standard (loosely based on PubSubHubbub).
 
->>> GET /block-endpoint
->>> Expect: subscription
->>> X-Callback: http://pipeline-endpoint?; method="POST"
->>> …more headers…
+	>>> GET /block-endpoint
+	>>> Expect: subscription
+	>>> X-Callback: http://pipeline-endpoint?; method="POST"
+	>>> …more headers…
 
 
 
