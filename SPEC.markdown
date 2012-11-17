@@ -1,19 +1,24 @@
 # WebPipes
 
-## Terms:
+## Terms
 
-- block: a web service API with machine readable description
-- trigger: a block with a well defined API to register an HTTP callback for invoking an action
-- action: a block that performs some action and has no outputs
-- pipeline: a description of how multiple blocks inputs and outputs are connected
-- pipeline editor: UI for composing a pipeline, e.x. Yahoo Pipes, IFTTT, etc
-- pipeline executor: potentially a block that executes a pipeline
-- composite block / pipeline block: a pipeline executor with pipeline description
-- composite trigger: a pipeline block used as a trigger
-- composite action: a pipeline block used as an action
+- block: a web service endpoint that implements the block API
+- block definition: machine readable description of a block and its inputs and outputs
+- inputs: named values for requests to a block
+- outputs: named values for a block response
+- trigger: a type of block with no inputs and implements the trigger API as well as the block API
+- action: a type of block with no outputs that performs some "action"
+- pipeline: a composite block made from a pipeline definition and a pipeline executor
+- pipeline executor: a web service that exposes a block API endpoint that executes a pipeline definition 
+- pipeline definition: a block definition that also describes what blocks make it up and the pipes between them
+- pipe: the connection of a block output to a block input
+- pipeline editor: UI for composing a pipeline definition, e.x. Yahoo Pipes, IFTTT, etc
+- composite block: a pipeline used as a block
+- composite trigger: a pipeline used as a trigger
+- composite action: a pipeline used as an action
 
 
-## WebPipe Definition
+## Block Definition Format
 
 	{
 	    name: String
@@ -33,7 +38,7 @@
 	}
     
 
-## Invoking/Using a Block
+## Block API
 
 POST http://block-endpoint
     => JSON object of input data
@@ -46,7 +51,7 @@ http://zacstewart.com/2012/04/14/http-options-method.html
 Triggers use tentative HTTP Subscriptions spec or some simple variation.
 
 
-## Pipeline Defintion 
+## Pipeline Definition Format
 
 	{
 	    name: String
