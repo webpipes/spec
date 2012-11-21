@@ -27,14 +27,14 @@ WebPipes is an open framework for turning the web into an end-user programming e
 	{
 	    name: String
 	    description: String
-	    inputs: {
+	    input: {
 	        name: String
 	        type: String (Array, String, Number, Boolean)
 	        description: String
 	        optional?: Boolean
 	        default?: Any
 	    }
-	    outputs: {
+	    output: {
 	        name: String
 	        type: String (Array, String, Number, Boolean)
 	        description: String
@@ -82,7 +82,7 @@ The block definition is exposed in the body of response to an OPTIONS request on
 	<<< 200 OK
 	<<< Content-Type: application/json
 	<<< …more headers…
-	<<< {"name": "Example block", "inputs": […], "outputs": […], … }
+	<<< {"name": "Example block", "input": […], "output": […], … }
 
 (Note http://zacstewart.com/2012/04/14/http-options-method.html)
 
@@ -114,10 +114,10 @@ The trigger registration API is used for registering an HTTP callback that trigg
 	            target_input: String			# name of input for target
 	        }
 	    ]
-	    inputs: {
+	    input: {
       		… see block format …
 	    }
-	    outputs: {
+	    output: {
       		… see block format …
 	    }
 	}
