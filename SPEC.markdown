@@ -66,7 +66,7 @@ A block endpoint has normal HTTP semantics, but using input and output data stru
 	>>> POST /block-endpoint
 	>>> Content-Type: application/json
 	>>> …more headers…
-	>>> {"input": {"foo": "Value for foo input", "bar": "Value for bar input"}}
+	>>> {"input": [{"foo": "Value for foo input", "bar": "Value for bar input"}]}
 
 	<<< 200 OK
 	<<< Content-Type: application/json
