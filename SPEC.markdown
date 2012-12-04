@@ -63,15 +63,17 @@ Notice the value of output is an array. This is because you may get back multipl
 ### Using a block
 A block endpoint has normal HTTP semantics, but using input and output data structures. The request body should be empty or be a valid input envelope with an input record, and the response body should be empty or be a valid output envelope with one or more output records. The input and output records must have keys that match the inputs and outputs defined in the block definition.
 
+        $ curl -d '{"inputs": [{"foo": "Value for foo input","bar": "Value for bar input"}]}' -H "Content-Type: application/json" http://example.com/block-endpoint 
+        
 	>>> POST /block-endpoint
 	>>> Content-Type: application/json
 	>>> …more headers…
-	>>> {"input": {"foo": "Value for foo input", "bar": "Value for bar input"}}
+	>>> {"inputs": [{"foo": "Value for foo input", "bar": "Value for bar input"}]}
 
 	<<< 200 OK
 	<<< Content-Type: application/json
 	<<< …more headers…
-	<<< {"output": [{"baz": "Value for baz output", "qux": "Value for qux input"}]}
+	<<< {"output": [{"baz": "Value for baz output", "qux": "Value for qux output"}]}
 
 ### Getting a block definition
 The block definition is exposed in the body of response to an OPTIONS request on the block endpoint.
