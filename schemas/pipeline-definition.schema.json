@@ -1,0 +1,87 @@
+{
+    "id": "http://www.webpipes.org/",
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-03/schema",
+    "properties": {
+        "name": {
+            "id": "name",
+            "type": "string",
+            "required": true
+        },
+        "description": {
+            "id": "description",
+            "type": "string",
+            "required": true
+        },
+        "blocks": {
+            "id": "blocks",
+            "type": "array",
+            "required": true,
+            "items": {
+                "type": "object",
+                "id": "0",
+                "required": false,
+                "properties": {
+                    "id": {
+                        "id": "id",
+                        "type": "number",
+                        "required": true
+                    },
+                    "url": {
+                        "id": "url",
+                        "type": "string",
+                        "format": "uri",
+                        "required": true
+                    }
+                }
+            }
+        },
+        "inputs": {
+            "id": "inputs",
+            "type": "object",
+            "required": true
+        },
+        "outputs": {
+            "id": "outputs",
+            "type": "object",
+            "required": true
+        },
+        "pipes": {
+            "id": "pipes",
+            "type": "array",
+            "required": true,
+            "items": {
+                "id": "0",
+                "type": "object",
+                "required": true,
+                "properties": {
+                    "source_block": {
+                        "id": "source_block",
+                        "type": "number",
+                        "required": true
+                    },
+                    "source_output": {
+                        "id": "source_output",
+                        "type": "string",
+                        "required": true
+                    },
+                    "source_value": {
+                        "id": "source_value",
+                        "type": "string",
+                        "required": true
+                    },
+                    "target_block": {
+                        "id": "target_block",
+                        "type": "number",
+                        "required": true
+                    },
+                    "target_input": {
+                        "id": "target_input",
+                        "type": "string",
+                        "required": true
+                    }
+                }
+            }
+        }
+    }
+}
