@@ -1,0 +1,12 @@
+{
+    "id": "http://www.webpipes.org/",
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-03/schema",
+    "properties": {
+        "inputs": {
+            "type": "array",
+            "id": "inputs",
+            "required": false
+        }
+    }
+}
