@@ -1,33 +1,32 @@
 {
-    "id": "http://www.webpipes.org/",
+    "id": "http://www.webpipes.org/schemas/block-definition.json",
     "type": "object",
     "$schema": "http://json-schema.org/draft-03/schema",
     "properties": {
         "name": {
-            "id": "name",
+            "id": "#name",
+            "description": "The name for the Block.",
             "type": "string",
             "required": true
         },
         "url": {
-            "id": "name",
+            "id": "#url",
+            "description": "The URL pointing to the Block endpoint.",
             "type": "string",
             "format": "uri",
             "required": true
         },
         "description": {
-            "id": "description",
+            "id": "#description",
+            "description": "One or two sentences explaining what the Block does.",
             "type": "string",
             "required": true
         },
         "inputs": {
-            "id": "inputs",
-            "type": "array",
-            "required": true
+            "$ref": "http://www.webpipes.org/schemas/input-definition.json#inputs"
         },
         "outputs": {
-            "id": "outputs",
-            "type": "array",
-            "required": true
+            "$ref": "http://www.webpipes.org/schemas/output-definition.json#outputs"
         }
     }
 }

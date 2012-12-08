@@ -1,12 +1,42 @@
 {
-    "id": "http://www.webpipes.org/",
+    "id": "http://www.webpipes.org/schemas/input-definition.json",
     "type": "object",
     "$schema": "http://json-schema.org/draft-03/schema",
     "properties": {
         "inputs": {
             "type": "array",
-            "id": "inputs",
-            "required": false
+            "id": "#inputs",
+            "required": false,
+            "items": {
+                "title": "A Block Input Record.",
+                "description": "Any Input Record(s) the Block uses.",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "id": "#name",
+                        "type": "string",
+                        "description": "The name for this record."
+                    },
+                    "type": {
+                        "id": "#type",
+                        "type": "string",
+                        "description": "The variable type for this record.",
+                        "enum": [
+                            "string",
+                            "array",
+                            "object",
+                            "boolean",
+                            "number",
+                            "integer"
+                        ]
+                    },
+                    "description": {
+                        "id": "#definition",
+                        "type": "string",
+                        "description": "A brief explanation of the record."
+                    }
+                }
+            }
         }
     }
 }
