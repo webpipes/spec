@@ -1,5 +1,5 @@
 {
-    "id": "http://www.webpipes.org/schemas/input-definition.json",
+    "id": "https://raw.github.com/webpipes/spec/master/schemas/input-definition.schema.json",
     "type": "object",
     "$schema": "http://json-schema.org/draft-03/schema",
     "properties": {
@@ -15,12 +15,14 @@
                     "name": {
                         "id": "#name",
                         "type": "string",
-                        "description": "The name for this record."
+                        "description": "The name for this record.",
+                        "required":true
                     },
                     "type": {
                         "id": "#type",
                         "type": "string",
                         "description": "The variable type for this record.",
+                        "required":true,
                         "enum": [
                             "string",
                             "array",
@@ -33,7 +35,8 @@
                     "description": {
                         "id": "#definition",
                         "type": "string",
-                        "description": "A brief explanation of the record."
+                        "description": "A brief explanation of the record.",
+                        "required":true
                     }
                 }
             }

@@ -1,5 +1,5 @@
 {
-    "id": "http://www.webpipes.org/schemas/pipeline-definition.json",
+    "id": "https://raw.github.com/webpipes/spec/master/schemas/pipeline-definition.schema.json",
     "type": "object",
     "$schema": "http://json-schema.org/draft-03/schema",
     "properties": {
@@ -36,10 +36,10 @@
             }
         },
         "inputs": {
-            "$ref": "http://www.webpipes.org/schemas/input-definition.json#inputs"
+            "$ref": "https://raw.github.com/webpipes/spec/master/schemas/input-definition.schema.json#inputs"
         },
         "outputs": {
-            "$ref": "http://www.webpipes.org/schemas/output-definition.json#outputs"
+            "$ref": "https://raw.github.com/webpipes/spec/master/schemas/output-definition.schema.json#outputs"
         },
         "pipes": {
             "id": "#pipes",
