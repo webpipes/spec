@@ -62,7 +62,7 @@ Block endpoints work with JSON objects containing input or output "records". An 
 	
 	{"foo": "string value for foo", "bar": 42}
 
-This is put inside an input envelope, which is just a single key JSON object with the key "input":
+This is put inside an input envelope, which is just a single key JSON object with the key "inputs":
 
 	{"inputs": {"foo": "string value for foo", "bar": 42}}
 
